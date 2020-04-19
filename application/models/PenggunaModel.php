@@ -44,6 +44,35 @@ class PenggunaModel extends CI_Model
 
         return $this->db->update($this->tbPengguna, $this, ['pengguna_id' => $post['id']]);
     }
+
+    public function doLogin()
+    {
+        $post = $this->input->post();
+
+        // cari user berdasakan username
+
+        $this->db->where('pengguna_username', $post["username"]);
+
+        $user = $this->db->get($this->tbPengguna)->row();
+        // jika user terdaftar
+        if ($user) {
+            // periksa password nya
+            $isPasswordTrue = $post["password"] ==  $user->pengguna_password;
+            // jika password benar dan dia admin
+            if ($isPasswordTrue) {
+                // login sukses yay
+                $this->session->set_userdata(['user_logged' => $user]);
+                return true;
+            }
+        }
+        // jika login gagal
+        return false;
+    }
+
+    public function isNotLogin()
+    {
+        return $this->session->userdata('user_logged') === null;
+    }
 }
 
 /* End of file PenggunaModel.php */

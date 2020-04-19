@@ -31,7 +31,7 @@ class Lembur extends CI_Controller
             redirect(site_url('lembur'));
         } else {
             $data['pegawai'] = $this->PegawaiModel->getAllPegawai();
-            $this->load->view('lembur/add', $dataNULL);
+            $this->load->view('lembur/add', $data);
         }
     }
 

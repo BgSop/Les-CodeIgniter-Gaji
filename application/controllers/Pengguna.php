@@ -29,7 +29,7 @@ class Pengguna extends CI_Controller
             $this->PenggunaModel->savePengguna($post);
             redirect(site_url('pengguna'));
         } else {
-            $this->load->view('pengguna/vadd');
+            $this->load->view('pengguna/add');
         }
     }
 
@@ -40,7 +40,7 @@ class Pengguna extends CI_Controller
             redirect(site_url('pengguna'));
         } else {
             $data['pengguna'] = $this->PenggunaModel->getById($id);
-            $this->load->view('pengguna/vupdate', $data);
+            $this->load->view('pengguna/update', $data);
         }
     }
 

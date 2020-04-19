@@ -24,12 +24,12 @@
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-12 d-flex no-block align-items-center">
-                        <h4 class="page-title">Pengguna</h4>
+                        <h4 class="page-title">Jabatan</h4>
                         <div class="ml-auto text-right">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="<?php echo site_url('home') ?>">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Pengguna</li>
+                                    <li class="breadcrumb-item active" aria-current="page">Jabatan</li>
                                 </ol>
                             </nav>
                         </div>
@@ -39,29 +39,29 @@
 
             <div class="card mt-3">
                 <div class="card-body">
-                    <h5 class="card-title">Data Pengguna</h5>
+                    <h5 class="card-title">Data Jabatan</h5>
                     <div class="table-responsive">
-                        <a href="<?php echo site_url('Pengguna/add') ?>" class="btn btn-primary m-b-10"> Tambah Data</a>
+                        <a href="<?php echo site_url('jabatan/add') ?>" class="btn btn-primary m-b-10"> Tambah Data</a>
                         <table id="zero_config" class="table table-striped table-bordered">
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>Username</th>
-                                    <th>Password</th>
-                                    <th>Nama</th>
+                                    <th>Kode Jabatan</th>
+                                    <th>Nama Jabatan</th>
+                                    <th>Gaji Pokok</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($pengguna as $no => $row) : ?>
+                                <?php foreach ($jabatan as $no => $row) : ?>
                                     <tr>
                                         <td width="10px"><?php echo ++$no ?></td>
-                                        <td><?php echo $row->pengguna_username ?></td>
-                                        <td><?php echo $row->pengguna_password ?></td>
-                                        <td><?php echo $row->pengguna_nama ?></td>
+                                        <td><?php echo $row->jabatan_kode ?></td>
+                                        <td><?php echo $row->jabatan_nama ?></td>
+                                        <td>Rp. <?php echo number_format($row->jabatan_gapok) ?></td>
                                         <td width="160px">
-                                            <a href="<?php echo site_url('Pengguna/update/' . $row->pengguna_id) ?>" class="btn btn-warning">Edit</a>
-                                            <a href="<?php echo site_url('Pengguna/delete/' . $row->pengguna_id) ?>" class="btn btn-danger">Hapus</a>
+                                            <a href="<?php echo site_url('jabatan/update/' . $row->jabatan_id) ?>" class="btn btn-warning">Edit</a>
+                                            <a href="<?php echo site_url('jabatan/delete/' . $row->jabatan_id) ?>" class="btn btn-danger">Hapus</a>
                                         </td>
                                     </tr>
                                 <?php endforeach ?>

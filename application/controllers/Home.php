@@ -1,7 +1,8 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Home extends CI_Controller {
+class Home extends CI_Controller
+{
 
 	/**
 	 * Index Page for this controller.
@@ -20,6 +21,6 @@ class Home extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('index.php');
+		$this->load->view('overview.php');
 	}
 }

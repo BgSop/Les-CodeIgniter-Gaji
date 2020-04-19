@@ -24,9 +24,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 |
 */
 // Yang asli
-// $config['base_url'] = '';
-$config['base_url'] = "http://" . $_SERVER['HTTP_HOST'];
-$config['base_url'] .= preg_replace('@/+$@', '', dirname($_SERVER['SCRIPT_NAME'])) . '/';
+$config['base_url'] = 'http://localhost/OnGoing/CodeIgniter/';
+// $config['base_url'] = "http://" . $_SERVER['HTTP_HOST'];
+// $config['base_url'] .= preg_replace('@/+$@', '', dirname($_SERVER['SCRIPT_NAME'])) . '/';
 
 /*
 |--------------------------------------------------------------------------
